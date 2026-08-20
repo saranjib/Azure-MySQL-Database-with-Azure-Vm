@@ -9,6 +9,41 @@ The entire infrastructure is provisioned using Terraform, while **cloud-init** a
 ![Architecture](architecture.png)
 
 
+
+## 🔄 Application Request Flow
+
+```text
+User
+ |
+ | HTTP :80
+ v
+Azure Public IP
+ |
+ v
+Network Security Group
+ |
+ v
+Azure VM
+ |
+ v
+Nginx
+ |
+ | HTTP :5000
+ v
+Gunicorn
+ |
+ v
+Flask Application
+ |
+ | MySQL
+ v
+Azure MySQL Flexible Server
+ |
+ v
+inventorydb
+
+```
+
 ## 🌍 Access the Application
 
 After deployment:
