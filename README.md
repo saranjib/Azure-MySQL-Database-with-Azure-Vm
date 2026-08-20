@@ -9,6 +9,44 @@ The entire infrastructure is provisioned using Terraform, while **cloud-init** a
 ![Architecture](architecture.png)
 
 
+## 🌍 Access the Application
+
+After deployment:
+
+terraform output application_url
+
+Example:
+
+http://20.x.x.x
+
+Open the URL in a browser.
+
+You should see:
+
+Azure MySQL Inventory
+
+Product name
+Quantity
+Price
+
+[ Add Product ]
+
+
+## 🔐 SSH into the VM
+
+Get the public IP:
+
+terraform output vm_public_ip
+
+Connect:
+
+ssh azureadmin@<PUBLIC_IP>
+
+Example:
+
+ssh azureadmin@20.x.x.x
+
+
 ## 🔑 GitHub Secrets
 
 Configure these repository secrets:
