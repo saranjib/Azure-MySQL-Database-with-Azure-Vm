@@ -12,13 +12,13 @@ The entire infrastructure is provisioned using Terraform, while **cloud-init** a
 ## 🌍 Access the Application
 
 After deployment:
-
+```text
 terraform output application_url
-
+```
 Example:
-
+```text
 http://20.x.x.x
-
+```
 Open the URL in a browser.
 
 You should see:
@@ -35,17 +35,17 @@ Price
 ## 🔐 SSH into the VM
 
 Get the public IP:
-
+```text
 terraform output vm_public_ip
-
+```
 Connect:
-
+```text
 ssh azureadmin@<PUBLIC_IP>
-
+```
 Example:
-
+```text
 ssh azureadmin@20.x.x.x
-
+```
 
 ## 🔑 GitHub Secrets
 
