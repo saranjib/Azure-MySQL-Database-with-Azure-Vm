@@ -15,17 +15,18 @@ The application is a simple inventory management system.
 
 Users can:
 
-Add products
+1. Add products
 
-View products
+2. View products
 
-Store product quantities
+3. Store product quantities
 
-Store product prices
+4. Store product prices
 
-Delete products
+5. Delete products
 
 Example data:
+
 ```text
 Product      Quantity       Price
 ----------------------------------
@@ -47,14 +48,14 @@ Table:
 products
 
 Schema:
-
+```text
 products
 │
 ├── id
 ├── name
 ├── quantity
 └── price
-
+```
 The Flask application connects using environment variables:
 
 MYSQL_HOST
