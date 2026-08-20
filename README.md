@@ -32,3 +32,71 @@ After completing this project, you should understand:
 16. Cloud security fundamentals
 
 
+## 🎯 Skills Demonstrated
+
+This project demonstrates practical experience with:
+
+Cloud Computing
+      |
+      +-- Microsoft Azure
+      |
+      +-- Networking
+      |
+      +-- Virtual Machines
+      |
+      +-- Managed Databases
+      |
+      +-- Private Networking
+
+Infrastructure as Code
+      |
+      +-- Terraform
+
+DevOps
+      |
+      +-- GitHub
+      +-- GitHub Actions
+      +-- CI/CD
+
+Linux
+      |
+      +-- Ubuntu
+      +-- SSH
+      +-- Nginx
+      +-- Gunicorn
+
+Application Development
+      |
+      +-- Python
+      +-- Flask
+      +-- MySQL
+
+## 🧹 Destroy Infrastructure
+
+When finished testing:
+
+terraform destroy
+
+Or use the GitHub Actions:
+
+GitHub
+   ↓
+Actions
+   ↓
+Destroy Azure Infrastructure
+   ↓
+Run workflow
+
+Always verify the Azure Resource Group after destruction to ensure no unwanted billable resources remain.
+
+## 👨‍💻 Author
+
+Saranjib Kuanar
+
+Azure | DevOps | Terraform | Kubernetes | Python | Cloud Infrastructure
+
+⭐ If you find this project useful
+
+Give the repository a ⭐ on GitHub and use it as a practical Azure/DevOps portfolio project.
+
+
