@@ -1,0 +1,59 @@
+#cloud-config
+
+package_update: true
+
+packages:
+  - python3
+  - python3-pip
+  - python3-venv
+  - git
+  - nginx
+
+write_files:
+
+  - path: /opt/azure-mysql-app/.env
+    permissions: "0600"
+    content: |
+      MYSQL_HOST=${mysql_host}
+      MYSQL_DATABASE=${mysql_database}
+      MYSQL_USER=${mysql_user}
+      MYSQL_PASSWORD=${mysql_password}
+
+runcmd:
+
+  - mkdir -p /opt/azure-mysql-app
+
+  - git clone https://github.com/YOUR_GITHUB_USERNAME/Azure-MySQL-Database-with-Azure-Vm.git /opt/azure-mysql-app
+
+  - python3 -m venv /opt/azure-mysql-app/venv
+
+  - /opt/azure-mysql-app/venv/bin/pip install --upgrade pip
+
+  - /opt/azure-mysql-app/venv/bin/pip install -r /opt/azure-mysql-app/app/requirements.txt
+
+  - bash -c 'set -a && source /opt/azure-mysql-app/.env && set +a && /opt/azure-mysql-app/venv/bin/gunicorn --chdir /opt/azure-mysql-app/app --bind 127.0.0.1:5000 app:app > /var/log/azure-mysql-app.log 2>&1 &'
+
+  - systemctl enable nginx
+
+  - systemctl start nginx
+
+  - rm -f /etc/nginx/sites-enabled/default
+
+  - bash -c 'cat > /etc/nginx/sites-available/azure-mysql-app <<EOF
+server {
+    listen 80;
+    server_name _;
+
+    location / {
+        proxy_pass http://127.0.0.1:5000;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+    }
+}
+EOF'
+
+  - ln -s /etc/nginx/sites-available/azure-mysql-app /etc/nginx/sites-enabled/azure-mysql-app
+
+  - nginx -t
+
+  - systemctl restart nginx
