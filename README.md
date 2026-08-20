@@ -26,14 +26,14 @@ Store product prices
 Delete products
 
 Example data:
-
+```text
 Product      Quantity       Price
 ----------------------------------
 Laptop          10          899.99
 Keyboard        25           49.99
 Mouse           40           29.99
 Monitor         15          199.99
-
+```
 ## 🗄️ MySQL Database
 
 The application uses Azure Database for MySQL Flexible Server.
