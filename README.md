@@ -78,7 +78,7 @@ When finished testing:
 terraform destroy
 
 Or use the GitHub Actions:
-
+```text
 GitHub
    ↓
 Actions
@@ -86,7 +86,7 @@ Actions
 Destroy Azure Infrastructure
    ↓
 Run workflow
-
+```
 Always verify the Azure Resource Group after destruction to ensure no unwanted billable resources remain.
 
 ## 👨‍💻 Author
