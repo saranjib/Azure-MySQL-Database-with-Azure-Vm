@@ -9,6 +9,28 @@ The entire infrastructure is provisioned using Terraform, while **cloud-init** a
 ![Architecture](architecture.png)
 
 
+## 🔑 GitHub Secrets
+
+Configure these repository secrets:
+```text
+AZURE_CLIENT_ID
+AZURE_TENANT_ID
+AZURE_SUBSCRIPTION_ID
+SSH_PUBLIC_KEY
+MYSQL_ADMIN_PASSWORD
+
+Navigate to:
+
+GitHub Repository
+    ↓
+Settings
+    ↓
+Secrets and variables
+    ↓
+Actions
+    ↓
+New repository secret
+```
 
 ## 🔐 Azure Authentication
 
