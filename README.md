@@ -8,7 +8,7 @@ The entire infrastructure is provisioned using Terraform, while **cloud-init** a
 
 ![Architecture](architecture.png)
 
----
+
 
 ## 🔐 Azure Authentication
 
@@ -35,7 +35,6 @@ Terraform
 ```text
 This avoids storing a long-lived Azure client secret in GitHub.
 
----
 
 
 ## 📚 Learning Objectives
