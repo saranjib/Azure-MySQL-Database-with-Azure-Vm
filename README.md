@@ -32,7 +32,7 @@ Azure Subscription
       |
       v
 Terraform
-```text
+```
 This avoids storing a long-lived Azure client secret in GitHub.
 
 
