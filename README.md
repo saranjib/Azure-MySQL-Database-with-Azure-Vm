@@ -9,6 +9,41 @@ The entire infrastructure is provisioned using Terraform, while **cloud-init** a
 ![Architecture](architecture.png)
 
 
+## 📂 Project Structure
+
+```text
+Azure-MySQL-Database-with-Azure-Vm/
+│
+├── .github/
+│   └── workflows/
+│       ├── terraform.yml
+│       └── destroy.yml
+│
+├── app/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── templates/
+│       └── index.html
+│
+├── terraform/
+│   ├── provider.tf
+│   ├── variables.tf
+│   ├── main.tf
+│   ├── network.tf
+│   ├── vm.tf
+│   ├── mysql.tf
+│   ├── outputs.tf
+│   ├── cloud-init.yaml
+│   └── terraform.tfvars.example
+│
+├── scripts/
+│   └── install.sh
+│
+├── .gitignore
+├── README.md
+└── LICENSE
+```
+
 ## 🐍 Flask Application
 
 The application is a simple inventory management system.
