@@ -9,6 +9,99 @@ The entire infrastructure is provisioned using Terraform, while **cloud-init** a
 ![Architecture](architecture.png)
 
 
+## 🐍 Flask Application
+
+The application is a simple inventory management system.
+
+Users can:
+
+Add products
+
+View products
+
+Store product quantities
+
+Store product prices
+
+Delete products
+
+Example data:
+
+Product      Quantity       Price
+----------------------------------
+Laptop          10          899.99
+Keyboard        25           49.99
+Mouse           40           29.99
+Monitor         15          199.99
+
+## 🗄️ MySQL Database
+
+The application uses Azure Database for MySQL Flexible Server.
+
+Database:
+
+inventorydb
+
+Table:
+
+products
+
+Schema:
+
+products
+│
+├── id
+├── name
+├── quantity
+└── price
+
+The Flask application connects using environment variables:
+
+MYSQL_HOST
+MYSQL_DATABASE
+MYSQL_USER
+MYSQL_PASSWORD
+
+
+## 🚀 Cloud-init
+
+Cloud-init automatically configures the Azure VM when it starts for the first time.
+
+```text
+The cloud-init process:
+
+Azure VM Created
+       |
+       v
+Cloud-init Starts
+       |
+       +--> Update packages
+       |
+       +--> Install Python
+       |
+       +--> Install pip
+       |
+       +--> Install Git
+       |
+       +--> Install Nginx
+       |
+       +--> Clone GitHub repository
+       |
+       +--> Create Python virtual environment
+       |
+       +--> Install application dependencies
+       |
+       +--> Configure MySQL connection
+       |
+       +--> Configure Nginx
+       |
+       +--> Start application
+       |
+       v
+Application Ready
+```
+This removes the need to manually SSH into the VM and install the application.
+
 
 ## 🔄 Application Request Flow
 
