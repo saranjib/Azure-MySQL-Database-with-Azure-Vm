@@ -32,10 +32,13 @@ After completing this project, you should understand:
 16. Cloud security fundamentals
 
 
+
+
 ## 🎯 Skills Demonstrated
 
 This project demonstrates practical experience with:
 
+```text
 Cloud Computing
       |
       +-- Microsoft Azure
@@ -70,6 +73,8 @@ Application Development
       +-- Python
       +-- Flask
       +-- MySQL
+```
+
 
 ## 🧹 Destroy Infrastructure
 
@@ -89,11 +94,14 @@ Run workflow
 ```
 Always verify the Azure Resource Group after destruction to ensure no unwanted billable resources remain.
 
+
 ## 👨‍💻 Author
 
 Saranjib Kuanar
 
 Azure | DevOps | Terraform | Kubernetes | Python | Cloud Infrastructure
+
+
 
 ⭐ If you find this project useful
 
