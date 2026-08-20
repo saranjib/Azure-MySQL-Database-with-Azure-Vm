@@ -8,6 +8,34 @@ The entire infrastructure is provisioned using Terraform, while **cloud-init** a
 
 ![Architecture](architecture.png)
 
+---
+
+## 🔐 Azure Authentication
+
+GitHub Actions uses Azure federated identity/OIDC authentication.
+
+The deployment flow is:
+```text
+GitHub Actions
+      |
+      v
+Azure Login
+      |
+      v
+Microsoft Entra ID
+      |
+      v
+Federated Identity
+      |
+      v
+Azure Subscription
+      |
+      v
+Terraform
+```text
+This avoids storing a long-lived Azure client secret in GitHub.
+
+---
 
 
 ## 📚 Learning Objectives
@@ -30,6 +58,7 @@ After completing this project, you should understand:
 14. Azure OIDC authentication
 15. Terraform state
 16. Cloud security fundamentals
+
 
 
 
@@ -103,8 +132,5 @@ Azure | DevOps | Terraform | Kubernetes | Python | Cloud Infrastructure
 
 
 
-⭐ If you find this project useful
-
-Give the repository a ⭐ on GitHub and use it as a practical Azure/DevOps portfolio project.
 
 
